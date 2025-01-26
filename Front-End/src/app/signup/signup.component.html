@@ -1,0 +1,27 @@
+<div class="whole">
+  <br><br>
+  <div class="signup-container">
+    <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+      <h2>Signup</h2>
+
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" class="form-control" [(ngModel)]="signupData.username"
+          required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" [(ngModel)]="signupData.password"
+          required />
+      </div>
+      <div>
+        <a routerLink="/">Already have an account?</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">
+        Signup
+      </button>
+    </form>
+  </div>
+</div>

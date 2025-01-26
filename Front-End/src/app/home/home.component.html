@@ -1,0 +1,59 @@
+<div class="welcome-message">
+  <h1 *ngIf="username">Hello, {{ username }}!</h1>
+  <p *ngIf="!username">Loading...</p>
+</div>
+<div class="whole">
+  <br><br>
+  <div>
+    <button style="float: right;">
+      <a href="" routerLink="/">Logout</a>
+    </button>
+  </div>
+  
+  <div>
+    <h2>Upload the files</h2>
+    <form (ngSubmit)="onSubmit()">
+      <input type="file" name="file" (change)="onFileChange($event)" required> <br><br>
+      <button type="submit">Upload the files</button>
+    </form>
+  </div>
+  <br><br>
+  <div class="result">
+    <div>
+      <h2 style="margin-top: -10px;">Uploaded Files List <span style="font-size: 18px;font-weight: 100;">(Click the file for conversion)</span></h2>
+      <br>
+      <ul>
+        <li *ngFor="let file of uploadedFiles" (click)="onFileSelect(file)">
+          {{ file }}
+        </li>
+      </ul>
+    </div>
+    <div>
+      
+      <div *ngIf="selectedFile">
+        <h2 style="font-size: 22px;">Convert the file: <span style="font-size: 18px;font-weight: 100;"> {{ selectedFile }}</span></h2>
+        <form (ngSubmit)="onConvert()">
+          <div>
+            <label for="conversion">Conversion Type:</label>
+            <select name="conversion" id="conversion" [(ngModel)]="selectedConversion" required>
+              <option value="" disabled selected>Select a conversion type</option>
+              <option value="csv2json">CSV to JSON</option>
+              <option value="json2csv">JSON to CSV</option>
+              <option value="csv2xlsx">CSV to XLSX</option>
+              <option value="xlsx2csv">XLSX to CSV</option>
+              <option value="xlsx2json">XLSX to JSON</option>
+              <option value="json2xlsx">JSON to XLSX</option>
+            </select>
+          </div>
+          <div>
+            <button type="submit">Convert</button>
+          </div>
+        </form>
+      </div>
+  
+      <div class="down" *ngIf="downloadLink">
+        <button><a style="color: white;" [href]="downloadLink" target="_blank">Download Converted File</a></button>
+      </div>
+    </div>
+  </div>
+</div>

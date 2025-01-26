@@ -1,0 +1,92 @@
+.whole{
+  background-image: url("../../bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+}
+.login-container {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px 40px;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+.login-container h2 {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login-container form {
+  width: 100%;
+}
+
+.login-container div {
+  margin-bottom: 15px;
+}
+
+.login-container label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+.login-container a[routerLink] {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.login-container a[routerLink]:hover {
+  text-decoration: underline;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #07ad39;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #00861d;
+}
+
+.login-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
